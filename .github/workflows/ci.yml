@@ -1,0 +1,27 @@
+name: Node.js Docker & CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build Docker Image in Cloud
+      run: docker build -t seamfix-devops-demo .
+
+    - name: Run CI Verification
+      run: echo "Docker image built successfully in GitHub Actions!"
