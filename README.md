@@ -5,5 +5,5 @@ A containerized Node.js REST API with a GitHub Actions pipeline that builds the 
 
 ## Features
 - **Node.js & Express API**: Exposes a `/health` endpoint returning JSON health status.
-- **Dockerized**: Containerized application using multi-stage lightweight Alpine base image.
-- **CI/CD Pipeline**: Automated build and test workflow powered by GitHub Actions.
+- **Dockerized**: Containerized with a Dockerfile using a lightweight Node Alpine base image.
+- **CI Pipeline**: A GitHub Actions workflow installs dependencies and builds the Docker image on every push to main.
